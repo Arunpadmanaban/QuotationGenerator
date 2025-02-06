@@ -1,35 +1,12 @@
-body, html {
-    height: 100%;
-    margin: 0;
-    padding: 0;
+body {
     font-family: Arial, sans-serif;
-}
-
-.container {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    padding: 20px;
-}
-
-.header {
     text-align: center;
-    padding-bottom: 20px;
-}
-
-.header img {
-    max-width: 150px;
-    height: auto;
-}
-
-.content {
-    flex: 1;
 }
 
 table {
-    width: 100%;
+    width: 80%;
+    margin: 20px auto;
     border-collapse: collapse;
-    margin-top: 10px;
 }
 
 th, td {
@@ -38,22 +15,30 @@ th, td {
     text-align: center;
 }
 
-.footer {
-    text-align: center;
-    padding: 15px;
-    border-top: 2px solid black;
+.input-section {
+    margin: 20px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
     background: white;
+    margin: 10% auto;
+    padding: 20px;
+    width: 80%;
+    border-radius: 10px;
 }
 
-.button-container {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 15px;
-}
-
-@media print {
-    .button-container {
-        display: none; /* Hide buttons when printing */
-    }
+.close {
+    float: right;
+    font-size: 24px;
+    cursor: pointer;
 }

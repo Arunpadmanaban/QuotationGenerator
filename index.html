@@ -4,46 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SABARI ALUMINIUM</title>
-    <link rel="stylesheet" href="styles.css">
+     <link rel="stylesheet" href="style.css"> 
 </head>
 <body>
     <div class="container">
         <div class="header">
             <img src="logo.png" alt="Company Logo">
-            <h2>Sabari Aluminium</h2>
+            <div class="company-details">
+                <h2>SABARI ALUMINIUM</h2>
+                <p>9B, Asalathamman Koil Street, opposite Mangal park, VGP Nagar, Mogappair West, Mogappair, Chennai, 600037</p>
+            </div>
         </div>
 
-        <div class="content">
-            <table id="quotationTable">
+        <div class="date-field">
+            <label for="quotation-date">Date:</label>
+            <input type="date" id="quotation-date">
+        </div>
+
+        <div class="table-container">
+            <table>
                 <thead>
                     <tr>
-                        <th>No</th>
+                        <th>No.</th>
                         <th>Description</th>
                         <th>Quantity</th>
                         <th>Rate</th>
                         <th>Amount</th>
-                        <th>Action</th>
+                        <th>Voice Input</th>
+						 <th>Action</th>
                     </tr>
                 </thead>
-                <tbody></tbody>
+                <tbody id="quotation-body">
+                    <!-- Dynamic rows will be added here -->
+                </tbody>
             </table>
-            <button onclick="addRow()">Add Item</button>
+        </div>
 
-            <h3>Total: <span id="totalAmount">0.00</span></h3>
+        <div class="actions no-print">
+            <button onclick="addRow()">Add Item</button>
+            <button onclick="printPage()">Print</button>
+            <button onclick="shareWhatsApp()">Share on WhatsApp</button>
         </div>
 
         <div class="footer">
-            <p>Authorized By</p>
-			<span>G.V.Padmanaban
-        </div>
-<br>
-<br/>
-        <div class="button-container">
-            <button id="printBtn" onclick="printQuotation()">Print</button>
-            <button id="whatsappBtn" onclick="shareOnWhatsApp()">Share on WhatsApp</button>
+            <p>Authorized Signature</p>
         </div>
     </div>
 
-    <script src="script.js"></script>
+     <script src="script.js"></script>
 </body>
 </html>

@@ -8,7 +8,7 @@
             document.getElementById("quotation-date").valueAsDate = new Date();
         });
 
-        function addRow() {
+ function addRow() {
             const tableBody = document.getElementById("quotation-body");
             const row = document.createElement("tr");
             row.innerHTML = `
@@ -43,7 +43,7 @@ function updateTotal() {
 }
 function removeRow(button) {
     let row = button.closest("tr");
-    row.remove();`
+    row.remove();
     updateTotal();
 }
         function startSpeechRecognition(button) {

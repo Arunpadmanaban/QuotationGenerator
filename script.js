@@ -14,18 +14,36 @@
             row.innerHTML = `
                 <td>${counter++}</td>
                 <td><input type="text" class="description" placeholder="Description"></td>
-                <td><input type="number" placeholder="Quantity"></td>
-                <td><input type="number" placeholder="Rate"></td>
-                <td><input type="number" placeholder="Amount"></td>
+                <td><input type="number" class="quantity" placeholder="Quantity" oninput="updateAmount(this)"></td>
+                <td><input type="number" class="rate" placeholder="Rate"  oninput="updateAmount(this)"></td>
+               <td class="amount">0.00</td>
                 <td><button onclick="startSpeechRecognition(this)">🎤</button></td>
 				  <td><button onclick="removeRow(this)">Remove</button></td>
             `;
             tableBody.appendChild(row);
         }
 
+
+function updateAmount(input) {
+    let row = input.closest("tr");
+    let quantity = row.querySelector(".quantity").value || 0;
+    let rate = row.querySelector(".rate").value || 0;
+    let amount = (quantity * rate).toFixed(2);
+
+    row.querySelector(".amount").textContent = amount;
+    updateTotal();
+}
+
+function updateTotal() {
+    let total = 0;
+    document.querySelectorAll(".amount").forEach(cell => {
+        total += parseFloat(cell.textContent);
+    });
+    document.getElementById("totalAmount").textContent = total.toFixed(2);
+}
 function removeRow(button) {
     let row = button.closest("tr");
-    row.remove();
+    row.remove();`
     updateTotal();
 }
         function startSpeechRecognition(button) {
